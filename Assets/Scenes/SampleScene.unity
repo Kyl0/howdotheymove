@@ -224,10 +224,9 @@ GameObject:
   m_Component:
   - component: {fileID: 464327079}
   - component: {fileID: 464327080}
-  - component: {fileID: 464327081}
   - component: {fileID: 464327082}
   - component: {fileID: 464327083}
-  - component: {fileID: 464327082}
+  - component: {fileID: 464327081}
   m_Layer: 0
   m_Name: orb
   m_TagString: Untagged
@@ -299,18 +298,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &464327082
+--- !u!114 &464327081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464327078}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f9b145c062c4c7409859af54612f2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  feetPos: {fileID: 1292970098}
+  boxLength: 0.75
+  boxHeight: 0.25
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &464327082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f30fa6acf7f7145bc22548bd989ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 597250660}
+  target: {fileID: 597250666}
   rb: {fileID: 464327083}
   speed: 7.2
   minDistance: 1.2
@@ -348,12 +353,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
-  feetPos: {fileID: 0}
-  boxLength: 0
-  boxHeight: 0
-  ground:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,13 +465,6 @@ PlatformEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597250659}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.07, y: -1.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Enabled: 1
   m_UseColliderMask: 1
   m_ColliderMask:

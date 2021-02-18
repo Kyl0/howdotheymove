@@ -5,9 +5,13 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private BoxCollider2D bc;
-    private static float speed;
-    private static float jumpForce;
+    public static float speed;
+    public static float jumpForce;
+    private bool isGrounded;
+    public Transform feetPos;
+    //public float checkRadius;
+    public float boxLength;
+    public float boxHeight;
     public LayerMask ground;
 
     // Start is called before the first frame update
@@ -16,7 +20,6 @@ public class movement : MonoBehaviour
         speed = 10;
         jumpForce = 9;
         rb = GetComponent<Rigidbody2D>();
-        bc = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -25,13 +28,16 @@ public class movement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector2 dir = new Vector2(x, y);
+        //isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, ground);
+        Vector2 box = new Vector2(boxLength, boxLength);
+        isGrounded = Physics2D.OverlapBox(feetPos.position, box, 90f, ground);
         //Debug.Log(speed);
-        Debug.Log(jumpForce);
+        //Debug.Log(jumpForce);
 
-        if (Input.GetButtonDown("Jump"))
+
+        if (isGrounded == true && Input.GetButtonDown("Jump"))
         {
-            if (bc.IsTouchingLayers(ground))
-                Jump(Vector2.up);
+            Jump(Vector2.up);
         }
 
         Walk(dir);

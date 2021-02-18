@@ -25,27 +25,27 @@ public class altermovement : movement
         bool down = Input.GetKey("down");
 
         //Debug.Log(changeSpeed);
-        if (left == true && changeSpeed >= 2 )
+        if (left == true && changeSpeed >= 10 )
         {
-            nSpeed = changeSpeed - 4 * Time.deltaTime;
+            nSpeed = changeSpeed - 10 * Time.deltaTime;
             setSpeed(nSpeed);
             changeSpeed = nSpeed;
         }
         if(right == true && changeSpeed <= 60)
         {
-            nSpeed = changeSpeed + 4 * Time.deltaTime;
+            nSpeed = changeSpeed + 10 * Time.deltaTime;
             setSpeed(nSpeed);
             changeSpeed = nSpeed;
         }
         if(up == true && changeJump <= 25)
         {
-            nJump = changeJump + 4 * Time.deltaTime;
+            nJump = changeJump + 10 * Time.deltaTime;
             setJumpforce(nJump);
             changeJump = nJump;
         }
-        if (down == true && changeJump >= 2)
+        if (down == true && changeJump >= 5)
         {
-            nJump = changeJump - 4 * Time.deltaTime;
+            nJump = changeJump - 10 * Time.deltaTime;
             setJumpforce(nJump);
             changeJump = nJump;
         }

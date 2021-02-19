@@ -665,6 +665,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -678,10 +679,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 8e6e00cd-cdf2-4e01-8ed0-0e33de67ef18
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: howdotheymove
+  organizationId: kyle-jordan-add10a95-17b9-4678-8fc9-968932d6ddf4
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

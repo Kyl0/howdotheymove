@@ -13,7 +13,7 @@ public class checkpoints : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log(CompareTag("Player"));
+        Debug.Log(other.CompareTag("Player"));
         if (other.gameObject.CompareTag("Player"))
         {
             gm.lastCheckPointPos = transform.position;

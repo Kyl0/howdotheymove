@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - GM
-  - player
+  - hazard
+  - Motus
   layers:
   - Default
   - TransparentFX

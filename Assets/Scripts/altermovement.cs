@@ -9,6 +9,7 @@ public class altermovement : movement
     private float nSpeed;
     private float nJump;
 
+    public SpeedBarBehavior SpeedBar;
 
     void Start()
     {
@@ -30,12 +31,14 @@ public class altermovement : movement
             nSpeed = changeSpeed - 10 * Time.deltaTime;
             setSpeed(nSpeed);
             changeSpeed = nSpeed;
+            SpeedBar.DisplaySpeed(getSpeed());
         }
         if(right == true && changeSpeed <= 60)
         {
             nSpeed = changeSpeed + 10 * Time.deltaTime;
             setSpeed(nSpeed);
             changeSpeed = nSpeed;
+            SpeedBar.DisplaySpeed(getSpeed());
         }
         if(up == true && changeJump <= 25)
         {

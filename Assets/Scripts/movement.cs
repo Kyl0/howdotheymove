@@ -18,7 +18,7 @@ public class movement : MonoBehaviour
     void Awake()
     {
         speed = 10;
-        jumpForce = 9;
+        jumpForce = 7;
         rb = GetComponent<Rigidbody2D>();
     }
 

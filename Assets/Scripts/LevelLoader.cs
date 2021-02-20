@@ -9,13 +9,19 @@ public class LevelLoader : MonoBehaviour
 
     public float transitionTime = 1f;
 
+    private goalflag g;
+
+    private void Start()
+    {
+        g = GameObject.FindGameObjectWithTag("Goal").GetComponent<goalflag>();
+    }
     // Update is called once per frame
     void Update()
     {
-       // if (Input.GetMouseButtonDown(0))
-      //  {
-      //      LoadNextLevel();
-     //   }
+        if (g.levelended)
+        {
+            LoadNextLevel();
+        }
     }
 
     public void LoadNextLevel()

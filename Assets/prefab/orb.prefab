@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 499124971193739248}
-  minDistance: 1.2
+  minDistance: 4
+  maxDistance: 10
 --- !u!50 &499124971193739248
 Rigidbody2D:
   serializedVersion: 4

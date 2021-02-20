@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeedBarBehavior : MonoBehaviour
+public class JumpBarBehavior : MonoBehaviour
 {
     public Slider Slider;
     public Color Low;
@@ -15,17 +15,16 @@ public class SpeedBarBehavior : MonoBehaviour
     {
         //image = Slider.GetComponentInChildren<Image>();
     }
-    public void SetBarLimits(float minSpeed, float maxSpeed)
+    public void SetBarLimits(float minJump, float maxJump)
     {
-        Slider.maxValue = maxSpeed;
-        Slider.minValue = minSpeed;
+        Slider.maxValue = maxJump;
+        Slider.minValue = minJump;
     }
-    public void DisplaySpeed(float speed)
+    public void DisplayJump(float jump)
     {
-        Slider.value = speed;
+        Slider.value = jump;
 
         //image.color = Color.Lerp(Low, High, Slider.normalizedValue);
         //Slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(Low, High, Slider.normalizedValue);
     }
-
 }

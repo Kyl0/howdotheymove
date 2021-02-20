@@ -36,14 +36,14 @@ public class altermovement : movement
         //Debug.Log(changeSpeed);
         if (left == true && changeSpeed >= minspeed )
         {
-            nSpeed = changeSpeed - 10 * Time.deltaTime;
+            nSpeed = changeSpeed - 20 * Time.deltaTime;
             setSpeed(nSpeed);
             changeSpeed = nSpeed;
             //SpeedBar.DisplaySpeed(getSpeed());
         }
         if(right == true && changeSpeed <= maxspeed)
         {
-            nSpeed = changeSpeed + 10 * Time.deltaTime;
+            nSpeed = changeSpeed + 20 * Time.deltaTime;
             setSpeed(nSpeed);
             changeSpeed = nSpeed;
             //SpeedBar.DisplaySpeed(getSpeed());

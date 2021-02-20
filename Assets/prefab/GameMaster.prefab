@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0956df8f9252419469e204136e6da373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckPointPos: {x: -6.1, y: -1.21}
+  lastCheckPointPos: {x: -6.1, y: -2.020502}

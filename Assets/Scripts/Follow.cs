@@ -10,10 +10,12 @@ public class Follow : MonoBehaviour
     // private Transform target;
 
     // Start is called before the first frame update
-         void Start()
-         {
-            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-         }
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        mv = player.GetComponent<movement>();
+        target = player.GetComponent<Transform>();
+    }
 
     // Update is called once per frame
     //  void Update()
@@ -25,17 +27,23 @@ public class Follow : MonoBehaviour
     //      }
     //  }
 
-    public Transform target;
+    private GameObject player;
+    private movement mv;
+    private Transform target;
     public Rigidbody2D rb;
-    public float speed;
+    private float speed;
+    private float jump;
     public float minDistance;
 
     void Update()
     {
+        speed = mv.getSpeed() - 2;
+        jump = mv.getJumpforce() - 3;
+
         Vector3 dir = (target.transform.position - rb.transform.position).normalized;
         if (Vector2.Distance(target.transform.position, rb.transform.position) > minDistance)
         {
-            rb.MovePosition(rb.transform.position + dir * speed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.transform.position + dir * (speed + jump) / 2 * Time.fixedDeltaTime);
         }
     }
 }

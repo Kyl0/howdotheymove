@@ -8,12 +8,19 @@ public class altermovement : movement
     private float changeJump;
     private float nSpeed;
     private float nJump;
-
+    private float maxspeed = 60f;
+    private float minspeed = 10f;
+    private float maxjump = 25f;
+    private float minjump = 5f;
+    public SpeedBarBehavior SpeedBar;
+    public JumpBarBehavior JumpBar;
 
     void Start()
     {
         changeSpeed = getSpeed();
         changeJump = getJumpforce();
+        SpeedBar.SetBarLimits(minspeed, maxspeed);
+        JumpBar.SetBarLimits(minjump, maxjump);
     }
 
     // Update is called once per frame
@@ -24,26 +31,30 @@ public class altermovement : movement
         bool up = Input.GetKey("up");
         bool down = Input.GetKey("down");
 
+        SpeedBar.DisplaySpeed(getSpeed());
+        JumpBar.DisplayJump(getJumpforce());
         //Debug.Log(changeSpeed);
-        if (left == true && changeSpeed >= 10 )
+        if (left == true && changeSpeed >= minspeed )
         {
             nSpeed = changeSpeed - 10 * Time.deltaTime;
             setSpeed(nSpeed);
             changeSpeed = nSpeed;
+            //SpeedBar.DisplaySpeed(getSpeed());
         }
-        if(right == true && changeSpeed <= 60)
+        if(right == true && changeSpeed <= maxspeed)
         {
             nSpeed = changeSpeed + 10 * Time.deltaTime;
             setSpeed(nSpeed);
             changeSpeed = nSpeed;
+            //SpeedBar.DisplaySpeed(getSpeed());
         }
-        if(up == true && changeJump <= 25)
+        if(up == true && changeJump <= maxjump)
         {
             nJump = changeJump + 10 * Time.deltaTime;
             setJumpforce(nJump);
             changeJump = nJump;
         }
-        if (down == true && changeJump >= 5)
+        if (down == true && changeJump >= minjump)
         {
             nJump = changeJump - 10 * Time.deltaTime;
             setJumpforce(nJump);

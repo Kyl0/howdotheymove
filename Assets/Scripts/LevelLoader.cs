@@ -13,13 +13,14 @@ public class LevelLoader : MonoBehaviour
 
     private void Start()
     {
-        g = GameObject.FindGameObjectWithTag("Goal").GetComponent<goalflag>();
+        g = GameObject.FindGameObjectWithTag("goal").GetComponent<goalflag>();
     }
     // Update is called once per frame
     void Update()
     {
         if (g.levelended)
         {
+            g.levelended = false;
             LoadNextLevel();
         }
     }

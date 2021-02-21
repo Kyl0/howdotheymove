@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Just_Something_Else.unity
     guid: 01cc6c4d92f2a2642953eab4dd19a0ca
   - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: 3c627df05d1f1154bb2215725f022a43
+  - enabled: 1
     path: Assets/Scenes/end.unity
     guid: d9461f065ccde6f43bb6faf07467570f
   m_configObjects: {}

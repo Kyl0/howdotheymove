@@ -8,6 +8,7 @@ TagManager:
   - hazard
   - Motus
   - Goal
+  - goal
   layers:
   - Default
   - TransparentFX

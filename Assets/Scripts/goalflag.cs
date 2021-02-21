@@ -11,6 +11,7 @@ public class goalflag : MonoBehaviour
 
     void Start()
     {
+        levelended = false;
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
 
         //orb = GameObject.FindGameObjectWithTag("Motus");

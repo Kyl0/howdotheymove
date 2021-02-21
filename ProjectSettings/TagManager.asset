@@ -7,6 +7,7 @@ TagManager:
   - GM
   - hazard
   - Motus
+  - Goal
   layers:
   - Default
   - TransparentFX

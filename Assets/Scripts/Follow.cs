@@ -31,19 +31,31 @@ public class Follow : MonoBehaviour
     private movement mv;
     private Transform target;
     public Rigidbody2D rb;
-    private float speed;
+    private float speed = 10;
+    private float maxSpeed = 50;
     private float jump;
+    private float initSpeed = 10;
     public float minDistance;
+    public float maxDistance;
 
     void Update()
     {
-        speed = mv.getSpeed() - 2;
-        jump = mv.getJumpforce() - 3;
-
         Vector3 dir = (target.transform.position - rb.transform.position).normalized;
-        if (Vector2.Distance(target.transform.position, rb.transform.position) > minDistance)
+        float d = Vector2.Distance(target.transform.position, rb.transform.position);
+        
+        if (d > minDistance && d <maxDistance)
         {
-            rb.MovePosition(rb.transform.position + dir * (speed + jump) / 2 * Time.fixedDeltaTime);
+            rb.MovePosition(rb.transform.position + dir * speed * Time.fixedDeltaTime);
+        } 
+        else if (d > maxDistance && speed < maxSpeed)
+        {
+            speed++;
+            rb.MovePosition(rb.transform.position + dir * speed * Time.fixedDeltaTime);
+        }
+        else
+        {
+            //rb.MovePosition(rb.transform.position + dir * speed * Time.fixedDeltaTime);
+            speed = initSpeed;
         }
     }
 }
